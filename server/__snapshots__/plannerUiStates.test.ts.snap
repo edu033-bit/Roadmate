@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`planner dashboard UI states > preserves the caution state contract 1`] = `
+{
+  "badge": "caution",
+  "canStart": true,
+  "departurePattern": "13:02",
+  "fallbackCandidateCount": 3,
+  "headline": "주의 운행",
+}
+`;
+
+exports[`planner dashboard UI states > preserves the high state contract 1`] = `
+{
+  "badge": "high",
+  "canStart": false,
+  "departurePattern": "13:02",
+  "fallbackCandidateCount": 3,
+  "headline": "고위험: 출발 보류 권장",
+}
+`;
+
+exports[`planner dashboard UI states > preserves the insufficient state contract 1`] = `
+{
+  "badge": "insufficient",
+  "canStart": true,
+  "departurePattern": "13:02",
+  "fallbackCandidateCount": 3,
+  "headline": "근거 부족: 현장 확인 필요",
+}
+`;
+
+exports[`planner dashboard UI states > preserves the normal state contract 1`] = `
+{
+  "badge": "normal",
+  "canStart": true,
+  "departurePattern": "13:02",
+  "fallbackCandidateCount": 3,
+  "headline": "정상 운행 가능",
+}
+`;

@@ -1,0 +1,20 @@
+# Project TODO
+
+- [x] Define shared planner types for plan inputs, vehicle specs, risk states, source evidence, and route options.
+- [x] Build external-data adapter interfaces for HGV routing, weather, highway traffic/toll/VMS, and port-pattern sources with normalized unavailable responses.
+- [x] Use default Korea Expressway provider routes without requesting separate travel-time or toll endpoint secrets, and fall back safely if an upstream contract fails.
+- [x] Implement public tRPC `plan.summary` and `plan.options` procedures with risk analysis, safe fallback data, and source metadata.
+- [x] Apply the automatic 15-minute buffer only for Gwangyang Port destinations in the departure-time calculation.
+- [x] Build mobile-first dashboard inputs for origin, destination, arrival time, workload, vehicle presets, and custom vehicle specifications.
+- [x] Build normal, caution, high-risk, and insufficient-evidence recommendation states with departure-window and safety-slack guidance.
+- [x] Build three comparable route-option cards and a route comparison view with selection and trip-start action.
+- [x] Build in-trip recheck view and navigation launch modal with dashboard return action.
+- [x] Build evidence panel that renders source provider, reliability, observation time, and collection failure reasons from API responses.
+- [x] Implement skeleton loading and visible fallback-mode messaging while preserving usable mock route options after API failure.
+- [x] Implement light/dark theme toggle and responsive mobile-first layout.
+- [x] Persist recent plan inputs, destination history, and previous-trip banner in local storage.
+- [x] Add Vitest coverage for planner calculations, API contracts, risk states, fallback behavior, and Gwangyang Port buffer behavior.
+- [x] Run TypeScript checking, Vitest suite, production build, and desktop/mobile visual QA; fix all blocking failures.
+- [x] Verify browser runtime tRPC requests for plan summary and options, including client-side fallback behavior.
+- [x] Visually verify compare, in-trip, navigation modal, evidence panel, and high-risk/insufficient states at mobile and desktop widths.
+- [x] Save an implementation checkpoint and prepare the project for the user to publish from the Manus interface.
