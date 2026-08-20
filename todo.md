@@ -18,3 +18,5 @@
 - [x] Verify browser runtime tRPC requests for plan summary and options, including client-side fallback behavior.
 - [x] Visually verify compare, in-trip, navigation modal, evidence panel, and high-risk/insufficient states at mobile and desktop widths.
 - [x] Save an implementation checkpoint and prepare the project for the user to publish from the Manus interface.
+- [x] Compare the published-project scaffold against the original `jeonnam-planner-mvp` source tree and document every active-code difference.
+- [x] Replace the reconstructed deployment code with an original-source-preserving migration plan before any further publication.
