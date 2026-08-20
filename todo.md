@@ -20,3 +20,5 @@
 - [x] Save an implementation checkpoint and prepare the project for the user to publish from the Manus interface.
 - [x] Compare the published-project scaffold against the original `jeonnam-planner-mvp` source tree and document every active-code difference.
 - [x] Replace the reconstructed deployment code with an original-source-preserving migration plan before any further publication.
+- [x] Compare the local PlannerArt concept-art render with the deployed render and identify missing CSS, assets, layout constraints, and theme dependencies.
+- [x] Restore the original concept-art visual system and verify mobile and desktop layouts no longer show clipped, narrow, or unstyled content.

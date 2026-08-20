@@ -175,3 +175,44 @@
     }
   }
 }
+
+/* Original PlannerArt canvas isolation. The local MVP used this compact baseline
+   rather than the template's semantic application shell. */
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body:has(.planner-art) {
+  background: #07111e;
+  color: #edf3f8;
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.planner-art[data-theme="light"] {
+  width: 100%;
+  min-height: 100svh;
+  padding: 24px;
+  background: #07111e;
+}
+
+.planner-art[data-theme="light"] .art-viewport {
+  background: #f7f9fc;
+}
+
+.planner-art button {
+  font: inherit;
+}
+
+@media (max-width: 560px) {
+  .planner-art[data-theme="light"] {
+    padding: 0;
+  }
+}

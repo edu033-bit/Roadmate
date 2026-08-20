@@ -299,7 +299,7 @@ export default function PlannerArtApp() {
             )}
             <div className="art-scroll">
               <CautionBanner risk={risk} />
-              {isLoading ? (
+              {isLoading && options.length === 0 ? (
                 <>
                   <SkeletonHero />
                   <SkeletonCard />
