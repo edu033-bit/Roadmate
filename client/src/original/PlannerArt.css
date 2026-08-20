@@ -1562,3 +1562,72 @@
   .plan-vehicle-grid button small { font-size: 10px; }
   .plan-sheet__footer { padding: 10px 16px 14px; }
 }
+
+/* ── Dashboard brand and trip summary refinement ── */
+.art-title-row { min-height: 96px; padding-block: 21px 19px; }
+.art-title > svg { width: 39px; height: 39px; }
+.art-brand { gap: 0; }
+.art-brand h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+.art-brand__sub {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.art-trip { min-height: 74px; padding-block: 12px; }
+.art-trip__route { gap: 7px; }
+.art-trip__route-line {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.art-trip__route-line > svg { flex: 0 0 auto; width: 18px; height: 18px; color: var(--teal); }
+.art-trip__route-line > span { overflow: hidden; min-width: 0; text-overflow: ellipsis; white-space: nowrap; }
+.art-trip__route-line b { color: var(--teal); font-size: 20px; font-weight: 500; }
+.art-trip__meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+.art-trip__meta svg { width: 13px; height: 13px; color: var(--teal); }
+.art-trip__meta i { width: 3px; height: 3px; border-radius: 50%; background: var(--line); }
+
+.art-arrival {
+  align-self: stretch;
+  justify-content: center;
+  min-width: 92px;
+  padding: 7px 9px;
+  border: 1px solid color-mix(in srgb, var(--yellow) 56%, var(--line));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--yellow) 12%, var(--surface));
+}
+.art-arrival__label { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 10px; font-weight: 800; }
+.art-arrival__label svg { width: 12px; height: 12px; color: var(--yellow); }
+.art-arrival strong { color: var(--ink); font-size: 24px; line-height: 1; letter-spacing: -0.045em; }
+
+@media (max-width: 560px) {
+  .art-title-row { min-height: 86px; padding-block: 18px 16px; }
+  .art-title > svg { width: 36px; height: 36px; }
+  .art-brand h1 { margin-bottom: 5px; font-size: 20px; }
+  .art-trip { min-height: 70px; }
+  .art-trip__route-line { font-size: 15px; }
+  .art-arrival { min-width: 82px; padding-inline: 7px; }
+  .art-arrival strong { font-size: 21px; }
+}

@@ -27,3 +27,6 @@
 - [x] Redesign the pre-trip plan editor to eliminate forced wrapping, overlapping labels, and arbitrary spacing in the supplied mobile view.
 - [x] Normalize the dashboard header typography and trip summary layout across narrow and wide mobile widths.
 - [x] Verify the editor and header on mobile and desktop before creating a new checkpoint.
+- [x] Manually enlarge and space the RoadMate brand lockup after the automatic editor failed to locate the target.
+- [x] Add visual route and metadata treatment to the trip summary and make the arrival time more prominent.
+- [x] Verify the revised header at mobile and desktop widths before saving a new checkpoint.

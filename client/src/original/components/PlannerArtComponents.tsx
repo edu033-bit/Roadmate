@@ -123,8 +123,11 @@ export function DashboardHeader({
         </div>
       </div>
       <button className="art-trip" type="button" onClick={onOpenPlan} aria-label="운행 조건 수정">
-        <span className="art-trip__route"><span>{plan.origin} <b aria-hidden="true">→</b> {plan.destination}</span><small>{vehicleLabel(plan.vehiclePreset)} · 오늘 {workloadLabel(plan.workload)}</small></span>
-        <span className="art-arrival"><small>도착 희망</small><strong>{plan.arrivalTime}</strong></span>
+        <span className="art-trip__route">
+          <span className="art-trip__route-line"><MapPinned aria-hidden="true" /><span>{plan.origin} <b aria-hidden="true">→</b> {plan.destination}</span></span>
+          <span className="art-trip__meta"><Truck aria-hidden="true" />{vehicleLabel(plan.vehiclePreset)}<i aria-hidden="true" /> <Compass aria-hidden="true" />오늘 {workloadLabel(plan.workload)}</span>
+        </span>
+        <span className="art-arrival"><span className="art-arrival__label"><Clock3 aria-hidden="true" />도착 희망</span><strong>{plan.arrivalTime}</strong></span>
       </button>
     </header>
   )
