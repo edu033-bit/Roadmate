@@ -434,7 +434,7 @@ export function CompareHeader({ plan, onBack, onToggleTheme, isLight }: { plan: 
 
 export function CompareTopSummary({ departureWindow, arrivalSlack }: { departureWindow: string; arrivalSlack: string }) {
   return (
-    <section className="art-compare-summary">
+    <section className="art-compare-summary art-compare-summary--enhanced">
       <div><Clock3 aria-hidden="true" /><span>권장 출발<strong>{departureWindow}</strong></span></div>
       <div><CircleCheck aria-hidden="true" /><span>도착 여유<strong>{arrivalSlack}</strong></span></div>
     </section>
@@ -450,11 +450,15 @@ export function RouteOptionCard({ option, selected, onSelect, risk }: { option: 
   const footer = option.id === 'base' ? '납기 여유 · 비용 균형' : option.id === 'time' ? '시간을 가장 우선' : '비용을 가장 우선'
   return (
     <button className={`art-option-card ${selected ? 'is-selected' : ''}`} type="button" onClick={() => onSelect(option.id)} aria-pressed={selected}>
-      <div className="art-recommendation-tag-row">
-        <span className="art-option-tag">{icon} {option.title}</span>
-        {option.portPatternApplied && <span className="art-card-port-tag"><Anchor aria-hidden="true" /> 항만 패턴</span>}
+      <div className="art-option-card__topline">
+        <div className="art-recommendation-tag-row">
+          <span className="art-option-tag">{icon} {option.title}</span>
+          {option.portPatternApplied && <span className="art-card-port-tag"><Anchor aria-hidden="true" /> 항만 패턴</span>}
+        </div>
+        <span className="art-option-card__select-state"><i aria-hidden="true" />{selected ? '현재 선택' : '후보'}</span>
       </div>
       <h2>{option.departure} 출발</h2>
+      <p className="art-option-card__reason">{option.reason}</p>
       <div className="art-route-stats">
         <RouteStat icon={<Clock3 />} label="예상 소요 시간" value={option.duration} />
         <RouteStat icon={<Wallet />} label="예상 비용" value={option.cost} />

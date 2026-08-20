@@ -102,7 +102,7 @@ const loadStoredPlan = (): PlanInputs => {
 }
 
 export default function PlannerArtApp() {
-  const [screen, setScreen] = useState<AppScreen>('dashboard')
+  const [screen, setScreen] = useState<AppScreen>(() => typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('view') === 'compare' ? 'compare' : 'dashboard')
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [plan, setPlan] = useState<PlanInputs>(loadStoredPlan)
   const [selectedId, setSelectedId] = useState<RouteOption['id']>(priorityRouteId(plan))

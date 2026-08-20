@@ -22,3 +22,5 @@
 - [x] Replace the reconstructed deployment code with an original-source-preserving migration plan before any further publication.
 - [x] Compare the local PlannerArt concept-art render with the deployed render and identify missing CSS, assets, layout constraints, and theme dependencies.
 - [x] Restore the original concept-art visual system and verify mobile and desktop layouts no longer show clipped, narrow, or unstyled content.
+- [x] Manually improve the route-option selection screen after the automatic visual edit failed to locate the target element.
+- [x] Verify the redesigned route selection UI at mobile and desktop widths before saving a new checkpoint.
