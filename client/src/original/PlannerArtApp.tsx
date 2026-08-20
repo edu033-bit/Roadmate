@@ -106,7 +106,7 @@ export default function PlannerArtApp() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [plan, setPlan] = useState<PlanInputs>(loadStoredPlan)
   const [selectedId, setSelectedId] = useState<RouteOption['id']>(priorityRouteId(plan))
-  const [isPlanEditorOpen, setPlanEditorOpen] = useState(false)
+  const [isPlanEditorOpen, setPlanEditorOpen] = useState(() => typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('edit') === '1')
   const [isNaviModalOpen, setIsNaviModalOpen] = useState(false)
   const [hasProceededHighRisk, setHasProceededHighRisk] = useState(false)
   const [riskStatus, setRiskStatus] = useState<RiskStatus>('caution')

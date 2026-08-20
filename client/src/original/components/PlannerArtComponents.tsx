@@ -183,10 +183,12 @@ export function PlanSetupSheet({ plan, onClose, onSave }: { plan: PlanInputs; on
     <div className="plan-sheet-backdrop">
       <form className="plan-sheet" onSubmit={submitPlan} aria-label="운행 조건 수정">
         <header className="plan-sheet__header">
-          <div><p>운행 조건</p><h2>출발 전 계획</h2></div>
+          <div><p>운행 조건</p><h2>출발 전 계획</h2><span>출발·도착·도착시각을 정리해 추천을 갱신합니다.</span></div>
           <button className="plan-close" type="button" onClick={onClose} aria-label="운행 조건 닫기"><X aria-hidden="true" /></button>
         </header>
         <div className="plan-sheet__body">
+          <section className="plan-sheet__group" aria-labelledby="route-input-title">
+            <p id="route-input-title" className="plan-sheet__group-title">경로 정보</p>
           <label className="plan-field">
             <span><MapPin aria-hidden="true" /> 출발지</span>
             <input value={draft.origin} onChange={(event) => setDraft((current) => ({ ...current, origin: event.target.value, originCoordinates: undefined }))} list="origin-options" required />
@@ -203,6 +205,7 @@ export function PlanSetupSheet({ plan, onClose, onSave }: { plan: PlanInputs; on
               {quickDestinations.map((option) => <option key={option.label} value={option.label} />)}
               {getRecentDestinations().map((option) => <option key={option.label} value={option.label} />)}
             </datalist>
+          </section>
           {/* P1-C: 최근 목적지 */}
           {getRecentDestinations().length > 0 && (
             <div className="plan-recent-destinations" aria-label="최근 목적지">
@@ -216,14 +219,12 @@ export function PlanSetupSheet({ plan, onClose, onSave }: { plan: PlanInputs; on
           )}
           {/* P1-A: 빠른 선택 — 광양항·산단·교통 */}
           <div className="plan-quick-destinations" aria-label="빠른 도착지 선택">
-            <span className="plan-quick-label">⚓ 광양항</span>
-            {quickDestinations.filter(o => o.group === '광양항').map((option) => (
+            <span className="plan-quick-label">빠른 도착지</span>
+            <div className="plan-quick-destinations__chips">
+            {quickDestinations.map((option) => (
               <button key={option.label} type="button" onClick={() => setDraft((current) => ({ ...current, destination: option.label, destinationCoordinates: option.coordinates }))}>{option.label}</button>
             ))}
-            <span className="plan-quick-label">🏭 산단</span>
-            {quickDestinations.filter(o => o.group === '산단').map((option) => (
-              <button key={option.label} type="button" onClick={() => setDraft((current) => ({ ...current, destination: option.label, destinationCoordinates: option.coordinates }))}>{option.label}</button>
-            ))}
+            </div>
           </div>
 
           <label className="plan-field plan-field--time">

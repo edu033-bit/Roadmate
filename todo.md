@@ -24,3 +24,6 @@
 - [x] Restore the original concept-art visual system and verify mobile and desktop layouts no longer show clipped, narrow, or unstyled content.
 - [x] Manually improve the route-option selection screen after the automatic visual edit failed to locate the target element.
 - [x] Verify the redesigned route selection UI at mobile and desktop widths before saving a new checkpoint.
+- [x] Redesign the pre-trip plan editor to eliminate forced wrapping, overlapping labels, and arbitrary spacing in the supplied mobile view.
+- [x] Normalize the dashboard header typography and trip summary layout across narrow and wide mobile widths.
+- [x] Verify the editor and header on mobile and desktop before creating a new checkpoint.
